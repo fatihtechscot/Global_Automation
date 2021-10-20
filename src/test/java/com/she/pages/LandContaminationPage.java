@@ -68,10 +68,17 @@ public class LandContaminationPage {
 
         return isDisplayed;
     }
+public void DeleteAll(){
 
+    for(int i=0;i<cogBtn.size();i++){
+
+        Delete();
+    }
+}
 
     public void Delete() {
         WebElement cogBtn = Driver.get().findElement(By.xpath("//div[@class='manage']/div/button"));
+
         WebElement deleteBtn = Driver.get().findElement(By.xpath("//a[@class='deleteDialog']"));
 
         BrowserUtils.hoverAndClick(cogBtn);
@@ -85,5 +92,7 @@ public class LandContaminationPage {
     @FindBy(xpath = "//button[.='Confirm']")
     public WebElement confirmBtn;
 
+    @FindBy(xpath = "//div[@class='manage']/div/button")
+    public List<WebElement> cogBtn;
 }
 

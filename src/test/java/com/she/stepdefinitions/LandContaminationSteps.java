@@ -33,10 +33,15 @@ public class LandContaminationSteps {
         HomePage homePage = new HomePage();
         homePage.NavigateModules(modules, page1, page2);
 
+        landContamination.DeleteAll();
+        BrowserUtils.waitFor(3);
+
+        landContamination.confirmBtn.click();
     }
 
     @When("User clicks New Record button")
     public void user_clicks_New_Record_button() {
+
 
         landContamination.newRecordBtn.click();
     }
@@ -73,9 +78,12 @@ public class LandContaminationSteps {
     @When("User delete first record")
     public void user_delete_first_record() {
         BrowserUtils.waitFor(3);
+
         landContamination.Delete();
         BrowserUtils.waitFor(3);
         landContamination.confirmBtn.click();
+
+
     }
 
     @Then("Verify the first record has been deleted")
