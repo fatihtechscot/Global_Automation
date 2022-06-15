@@ -1,4 +1,4 @@
-package com.she.runners;
+package com.automationpractice.runners;
 
 
 import io.cucumber.junit.Cucumber;
@@ -6,14 +6,15 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(  features = "src/test/resources/features",
-        glue = "com/she/stepdefinitions",
+@CucumberOptions(
+        features = "src/test/resources/features",
+        glue = "com/automationpractice/stepdefinitions",
         plugin = {"json:target/cucumber.json",
                 "html:target/default-html-reports"},
         dryRun =false,
-  tags = "@wip"
+        tags = "@wip"
 )
-public class CukesRunner {
+public class Runner {
 
 
 }

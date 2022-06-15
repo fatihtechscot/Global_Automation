@@ -1,4 +1,4 @@
-package com.she.utilities;
+package com.automationpractice.utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -18,9 +18,9 @@ public class Driver {
 
     private static WebDriver driver;
 
-    public static WebDriver get() {
+    public static WebDriver getDriver() {
         if (driver == null) {
-            String browser = ConfigurationReader.get("browser");
+            String browser = ConfigurationReader.getProperty("browser");
             switch (browser) {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
@@ -59,10 +59,7 @@ public class Driver {
                     driver = new SafariDriver();
                     break;
             }
-
-
         }
-
         return driver;
     }
 
